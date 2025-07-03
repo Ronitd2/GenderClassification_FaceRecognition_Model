@@ -1,6 +1,6 @@
 # Gender Classification & Face Matching
 
-This project addresses two core facial analysis tasks using machine learning:
+This project addresses two core facial analysis tasks :
 
 ##  Task A: Gender Classification
 
