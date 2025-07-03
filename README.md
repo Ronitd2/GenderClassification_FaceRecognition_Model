@@ -26,4 +26,42 @@ Build a system that determines whether a distorted image:
 This task requires handling distortions and generalizing to identities not seen during training.
 
 ---
+## Task-A Details
+## Gender Classification - ResNet50 with PyTorch
+
+This project implements a deep learning model for binary gender classification using facial images. The goal is to classify faces as either male or female.
+
+### Overview
+
+- The model is built using **PyTorch** and leverages a **pretrained ResNet50** architecture from torchvision.
+- Only the fully connected (FC) layers are fine-tuned; the rest of the model's parameters are frozen to speed up training and prevent overfitting.
+- The final classification layer is replaced with a custom head tailored for binary output (2 classes).
+
+### Data Handling
+
+- Training and validation data are loaded using PyTorch's `ImageFolder` and `DataLoader`.
+- Images are augmented using transformations like resizing, normalization, horizontal flipping, and color jittering to improve generalization.
+- The model is trained and validated on separate datasets to monitor performance.
+
+### Training
+
+- The model is optimized using the **Adam optimizer** and **cross-entropy loss**.
+- Training is conducted over multiple epochs, with metrics like accuracy and loss reported for both training and validation sets.
+- After training, evaluation is performed using classification reports and a confusion matrix.
+
+### Evaluation Results
+
+- **Accuracy:** 92%
+- **Precision:** 91%
+- **Recall:** 92%
+- **F1-Score:** 91%
+
+### Technologies Used
+
+- Python
+- PyTorch
+- torchvision
+- scikit-learn (for evaluation)
+- seaborn & matplotlib (for visualization)
+
 
